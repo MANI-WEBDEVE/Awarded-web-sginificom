@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Roboto+Slab:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Italianno&family=Roboto+Slab:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --salmon: #f4a460;
+    --cyan: #62b3b3;
+    --text-white: #fff;
+    --text-black: #000;
+    --text-darkCyan: #162929;
+    --text-salmondark: #4b301e
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+*::selection{
+    background-color: #f4a460;
+}
+body[theme= "dark"] {
+    background-color: var(--black);    
+}
+body[theme= "dark"] .section{
+    color: var(--text-white);    
+}
+body[theme= "salmon"] {
+    background-color: var(--salmon);    
+}
+body[theme= "salmon"] .section{
+    color: var(--text-salmondark);    
+}
+body[theme= "cyan"] {
+    background-color: var(--cyan);    
+}
+body[theme= "cyan"] .section{
+    color: var(--text-darkCyan);    
+}
+body[theme= "white"] {
+    background-color: var(--white);    
+}
+body[theme= "white"] .section{
+    color: var(--text-black);    
+}
+
+
+
+
+
+
+
+.row {
+    /* font-family:  "Roboto Slab", serif; */
+    /* font-family: "Space Grotesk", sans-serif; */
+    font-family: "Arvo", serif;
+}
