@@ -15,39 +15,35 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Neue Machina';
-    
-} 
+
+}
+.video-div {
+    clip-path:circle(var(--clip) at 50% 50%);
+}
 *::selection{
     background-color: #f4a460;
 }
 body[theme= "dark"] {
-    background-color: var(--black);    
+    background-color: var(--black);
 }
 body[theme= "dark"] .section{
-    color: var(--text-white);    
+    color: var(--text-white);
 }
 body[theme= "salmon"] {
-    background-color: var(--salmon);    
+    background-color: var(--salmon);
 }
 body[theme= "salmon"] .section{
-    color: var(--text-salmondark);    
+    color: var(--text-salmondark);
 }
 body[theme= "cyan"] {
-    background-color: var(--cyan);    
+    background-color: var(--cyan);
 }
 body[theme= "cyan"] .section{
-    color: var(--text-darkCyan);    
+    color: var(--text-darkCyan);
 }
 body[theme= "white"] {
-    background-color: var(--white);    
+    background-color: var(--white);
 }
 body[theme= "white"] .section{
-    color: var(--text-black);    
+    color: var(--text-black);
 }
-
-
-
-
-
-
-
