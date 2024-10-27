@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signify CO</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body theme="dark">
-    <div class="main w-full">
-      <div class="home section w-full h-[200vh] relative">
+  <body theme="dark"  class="body" data-scroll>
+    <div class="main w-full" >
+      <div data-color="dark" class="home section w-full h-[200vh] relative">
         <div class="sticky top-0 left-0 w-full">
         <div class="mainBtmHeading absolute bottom-[8%] left-[5%] w-48 z-[4]">
           <h2>
@@ -422,7 +423,8 @@
       </div>
     </div>
       <div
-        class="section2 section w-full px-10 flex gap-10 mt-10 justify-between items-start relative"
+      data-color="cyan"
+        class="section2 section  w-full px-10 flex gap-10 mt-10 justify-between items-start relative"
       >
         <div class="textl w-[40%] mt-10  top-[5%] left-0">
           <p class="text-xl font-light leading-[2rem]">
@@ -455,7 +457,7 @@
          
       </div>
     </div>
-    <div class="real w-full section">
+    <div class="real w-full section" data-scroll-to-duration="20000" data-color="salmon">
       <div class="cont h-[400vh] relative">
         <div
           class="sliders overflow-hidden w-full h-[100vh] flex sticky top-0 left-0"
@@ -563,7 +565,7 @@
         </div>
       </div>
     </div>
-    <div class="ourTeamSection section">
+    <div class="ourTeamSection section" data-color="white">
       <h1 class="text-7xl font-thin text-center py-10">Our Team</h1>
       <div class="list w-full mt-10 px-10">
         <div
@@ -660,7 +662,8 @@
       </div>
     </div>
     <div
-      class="employee-info h-[70vh] w-full flex items-center justify-center flex-col"
+   
+      class="section employee-info h-[70vh] w-full flex items-center justify-center flex-col"
     >
       <div
         class="firstEmply w-[60%] flex items-center justify-center text-center leading-[43px]"
@@ -681,7 +684,8 @@
       </div>
     </div>
     <div
-      class="capsule w-full h-screen flex items-start justify-between mt-20 px-32"
+    class="section capsule w-full h-screen flex items-start justify-between mt-20 px-32"
+    data-color="dark"
     >
       <div class="left w-1/4 h-full flex flex-col justify-between py-10">
         <h1 class="text-2xl font-thin leading-[2rem]">
@@ -704,7 +708,7 @@
 
           </div>
         </div>
-        <div class="capsule p-10 flex items-center  flex-col gap-10 rounded-full border-[1px] h-[77%] w-[100%]  rotate-[-20deg]">
+        <div class="capsule card-rounded-full translate-y-[22%] p-10 flex items-center  flex-col gap-10 rounded-full border-[1px] h-[77%] w-[100%]  rotate-[-20deg]  ">
             <div class="w-60 h-60 rounded-full overflow-hidden"><img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1728734719844-313736e7b639?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div>
           <div class="w-[239px] text-center mt-4 text-xl font-semibold"><h1>Personalization in the </h1><h1>digital  health industry</h1>
 
@@ -713,8 +717,10 @@
         </div>
       </div>
     </div>
+    <div class="h-screen w-full"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

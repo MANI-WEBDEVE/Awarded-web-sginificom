@@ -1,4 +1,3 @@
-
 const homePageAnimation = () => {
   gsap.set(".all-rows", { scale: 10 });
   const tl = gsap.timeline({
@@ -59,7 +58,7 @@ const homePageAnimation = () => {
       "row-animate"
     );
 };
-homePageAnimation()
+homePageAnimation();
 
 const cardAnimations = () => {
   const tl2 = gsap.timeline({
@@ -92,7 +91,7 @@ cardAnimations();
 
 const slidesAniamtion = () => {
   gsap.to(".slide", {
-    scrollTrigger:{
+    scrollTrigger: {
       trigger: ".real",
       start: "top top",
       end: "bottom bottom ",
@@ -101,66 +100,110 @@ const slidesAniamtion = () => {
     },
     xPercent: -200,
     ease: "ease-in-out",
-  })
-}
-slidesAniamtion()
+  });
+};
+slidesAniamtion();
 
 function listAnimation() {
   document.querySelectorAll(".listElem").forEach((el) => {
-    el.addEventListener("mousemove",function(e) {
-     const movingAnationTrcike = gsap.utils.mapRange(0,window.innerWidth,-200, 200, e.clientX)
-     const blueLayer = this.querySelector(".blue-layer")
-      const pictureElem = this.querySelector(".picture")
+    el.addEventListener("mousemove", function (e) {
+      const movingAnationTrcike = gsap.utils.mapRange(
+        0,
+        window.innerWidth,
+        -200,
+        200,
+        e.clientX
+      );
+      const blueLayer = this.querySelector(".blue-layer");
+      const pictureElem = this.querySelector(".picture");
       gsap.to(pictureElem, {
         opacity: 1,
         x: movingAnationTrcike,
         ease: "ease-in-out",
-       
-      })
+      });
       gsap.to(blueLayer, {
         height: "100%",
         ease: "ease-in-out",
-       
-      })
-    })
-    el.addEventListener("mouseleave", function(e){
-      const blueLayer = this.querySelector(".blue-layer")
-      const pictureElem = this.querySelector(".picture")
+      });
+    });
+    el.addEventListener("mouseleave", function (e) {
+      const blueLayer = this.querySelector(".blue-layer");
+      const pictureElem = this.querySelector(".picture");
       gsap.to(pictureElem, {
         opacity: 0,
         ease: "ease-in-out",
-      })
+      });
       gsap.to(blueLayer, {
         height: "0%",
         ease: "ease-in-out",
-      })
-    })
+      });
+    });
   });
 }
-listAnimation()
+listAnimation();
 
 const wordAnimations = () => {
-  let clutter= ""
-  const para = document.querySelector(".text-para")
+  let clutter = "";
+  const para = document.querySelector(".text-para");
   const words = para.textContent.split("").forEach((el) => {
-    if(el === " ") clutter += `<span >&nbsp</span>`
-    clutter += `<span>${el}</span>`
-  })
-  document.querySelector(".text-para").innerHTML = clutter
+    if (el === " ") clutter += `<span >&nbsp</span>`;
+    clutter += `<span>${el}</span>`;
+  });
+  document.querySelector(".text-para").innerHTML = clutter;
   gsap.set(".text-para span", {
     opacity: 0.1,
-  })
+  });
   gsap.to(".text-para span", {
     scrollTrigger: {
       trigger: ".firstEmply",
       start: "top 40%",
       end: "bottom 90%",
-      scrub: 3,
+      scrub: 5,
     },
     opacity: 1,
     ease: "ease-in",
-    stagger: 0.1,
+    stagger: 2,
     duration: 1,
+  });
+};
+wordAnimations();
+
+const locomotiveScroll = new LocomotiveScroll({ autoStart: false });
+
+// Starting the locomotive scroll on the next frame
+requestAnimationFrame(() => {
+    locomotiveScroll.start();
+});
+
+
+const cardsRAnimation = () => {
+  gsap.to(".card-rounded-full", {
+    scrollTrigger: {
+      trigger: ".card-rounded-full",
+      start: "top 50%",
+      end: "bottom bottom",
+      scrub: 5,
+    },
+    y: 0,
+    ease: "ease-in-out",
+  });
+}
+cardsRAnimation();
+
+function changeTheme () {
+  document.querySelectorAll(".section").forEach((el) => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top 50%",
+      end: "bottom 50%",
+      onEnter: () => {
+        document.body.setAttribute("theme", el.dataset.color)
+      },
+      onEnterBack: () => {
+        document.body.setAttribute("theme", el.dataset.color)
+      }
+    })
   })
 }
-wordAnimations();
+
+changeTheme()
