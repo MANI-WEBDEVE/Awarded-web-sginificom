@@ -102,8 +102,22 @@ const slidesAniamtion = () => {
     ease: "ease-in-out",
   });
 };
+
 slidesAniamtion();
 
+function imageAnimation() {
+  gsap.to(".slide .image1", {
+    scrollTrigger: {
+      trigger: ".real",
+      start: "top top",
+      end: "bottom bottom ",
+      scrub: 5,
+    },
+    x: -300,
+  });
+}
+
+imageAnimation();
 function listAnimation() {
   document.querySelectorAll(".listElem").forEach((el) => {
     el.addEventListener("mousemove", function (e) {
@@ -119,6 +133,7 @@ function listAnimation() {
       gsap.to(pictureElem, {
         opacity: 1,
         x: movingAnationTrcike,
+        rotate: movingAnationTrcike * 0.09,
         ease: "ease-in-out",
       });
       gsap.to(blueLayer, {
@@ -172,9 +187,8 @@ const locomotiveScroll = new LocomotiveScroll({ autoStart: false });
 
 // Starting the locomotive scroll on the next frame
 requestAnimationFrame(() => {
-    locomotiveScroll.start();
+  locomotiveScroll.start();
 });
-
 
 const cardsRAnimation = () => {
   gsap.to(".card-rounded-full", {
@@ -187,23 +201,77 @@ const cardsRAnimation = () => {
     y: 0,
     ease: "ease-in-out",
   });
-}
+};
 cardsRAnimation();
 
-function changeTheme () {
+function changeTheme() {
   document.querySelectorAll(".section").forEach((el) => {
     ScrollTrigger.create({
       trigger: el,
       start: "top 50%",
       end: "bottom 50%",
       onEnter: () => {
-        document.body.setAttribute("theme", el.dataset.color)
+        document.body.setAttribute("theme", el.dataset.color);
       },
       onEnterBack: () => {
-        document.body.setAttribute("theme", el.dataset.color)
-      }
-    })
-  })
+        document.body.setAttribute("theme", el.dataset.color);
+      },
+    });
+  });
 }
 
-changeTheme()
+changeTheme();
+
+function footerPageAnimation() {
+  gsap.to(".footer", {
+    scrollTrigger: {
+      trigger: ".footer-page",
+      start: "top 50%",
+      end: "bottom 50%",
+      scrub: 5,
+    },
+    height: "40%",
+    ease: "ease-in-out",
+  })
+  gsap.to(".copy-right", {
+    scrollTrigger: {
+      trigger: ".footer-page",
+      start: "top 50%",
+      end: "bottom 50%",
+      scrub: 5,
+    },
+    y: -100,
+    opacity:1,
+    ease: "ease-in-out",
+  });
+}
+
+footerPageAnimation();
+
+
+function navAnimation () {
+  gsap.to(".nav", {
+    scrollTrigger: {
+      trigger: ".home",
+      start: "top 10%",
+      end: "bottom top",
+      scrub: 5,
+      
+    },
+    height: '10%',
+  })
+  gsap.to(".nav h1", {
+    scrollTrigger: {
+      trigger: ".home",
+      start: "top 10%",
+      end: "bottom top",
+      scrub: 5,
+      
+    },
+    y: 100,
+    opacity:0,
+    ease: "ease-in-out",
+    duration:0.7  
+  })
+}
+navAnimation()
